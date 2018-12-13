@@ -1,20 +1,24 @@
 # SQL
 Collection of SQL scripts for reference
 
-# Table of contents
+# TABLE OF CONTENTS
 1. [DATABASES](#databases)
 2. [Create a new database](#create-a-new-database)
-3. [TABLES](#tables)
+3. [Remove a database](#remove-a-database)
+4. [TABLES](#tables)
+5. [Create a new table](#create-a-new-table)
+6. [Remove a table](#remove-a-table)
+7. [DATATYPES](#datatypes)
 
 
 ## DATABASES<a name="databases"></a>
-### Create a new database<a name="create-a-new_database"></a>
+> ### Create a new database<a name="create-a-new-database"></a>
 
 > ```sql
 > CREATE DATABASE IF NOT EXISTS database_name
 > ```
 
-> ### Remove a database
+> ### Remove a database<a name="remove-a-database"></a>
 
 > ```sql
 > DROP DATABASE IF EXISTS database_name
@@ -22,7 +26,7 @@ Collection of SQL scripts for reference
 
 
 ## TABLES<a name="tables"></a>
-> ### Create a new table
+> ### Create a new table<a name="create-a-new-table"></a>
 
 > ```sql
 > CREATE TABLE IF NOT EXISTS table_name (
@@ -31,14 +35,14 @@ Collection of SQL scripts for reference
 > );
 > ```
 
-> ### Drop a table
+> ### Drop a table<a name="remove-a-table"></a>
 
 > ```sql
 > DROP TABLE IF EXISTS table_name
 > ```
 
 
-## DATATYPES
+## DATATYPES<a name="datatypes"></a>
 > ### Numeric
 
 > **Datatype**|**Range**
