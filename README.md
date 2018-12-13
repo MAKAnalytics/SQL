@@ -59,10 +59,35 @@ Collection of SQL scripts for reference
 > ### Character and string
 > **Datatype**|**Description**
 > -----|-----
->`CHAR`|Fixed length string with maximum length of 8,000 characters
->`VARCHAR`|Variable length string with maximum length of 8,000 characters
->`VARCHAR(max)`|Variable length string with 'max' characters
+> `CHAR`|Fixed length string with maximum length of 8,000 characters
+> `VARCHAR`|Variable length string with maximum length of 8,000 characters
+> `VARCHAR(max)`|Variable length string with 'max' characters
 > `TEXT`|Variable length string with maximum size of 2GB data
+
+> ### Unicode character and string
+> **Datatype**|**Description**
+> -----|-----
+> `NCHAR`|Fixed length string with maximum length of 4,000 characters
+> `NVARCHAR`|Variable length string with maximum length of 4,000 characters
+> `NVARCHAR(max)`|Variable length string with 'max' characters
+> `NTEXT`|Variable length string with maximum size of 1GB data
+
+> ### Unicode character and string
+> **Datatype**|**Description**
+> -----|-----
+> `BINARY`|Fixed length with maximum length of 8,000 bytes
+> `VARBINARY`|Variable length with maximum length of 4,000 bytes
+> `VARBINARY(max)`|Variable string with 'max' bytes
+> `IMAGE`|Variable length storage with maximum size of 2GB binary data
+
+> ### Miscellaneous
+> **Datatype**|**Description**
+> -----|-----
+> `CLOB`|Character large objects that can hold up to 2GB
+> `BLOB`|Binary large objects
+> `XML`|Stores XML data
+> `JSON`|Stores JSON data
+
 
 ## CONSTRAINTS
 
