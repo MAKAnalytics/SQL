@@ -3,11 +3,12 @@ Collection of SQL scripts for reference
 
 # Table of contents
 1. [DATABASES](#databases)
-  1.1 [Create a new database](#create a new database)
+2. [Create a new database](#create-a-new-database)
+3. [TABLES](#tables)
 
 
 ## DATABASES<a name="databases"></a>
-> ### Create a new database<a name="create a new database"></a>
+### Create a new database<a name="create-a-new_database"></a>
 
 > ```sql
 > CREATE DATABASE IF NOT EXISTS database_name
@@ -20,7 +21,7 @@ Collection of SQL scripts for reference
 > ```
 
 
-## TABLES
+## TABLES<a name="tables"></a>
 > ### Create a new table
 
 > ```sql
