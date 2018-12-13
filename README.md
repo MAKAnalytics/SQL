@@ -33,17 +33,31 @@ DROP TABLE IF EXISTS table_name
 
 
 ## DATATYPES
+### Numeric
+
+**Datatype**|**Range**
+-----|-----
+`BIT`|0 or 1
+`TINYINT`|0 to 255
+`SMALLINT`|-32,768 to 32,767
+`INT`|-2,147,483,648 to 2,147,483,647
+`BIGINT`|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+`DECIMAL`|-10^38 +1 to 10^38 -1
+`FLOAT`|-1.79E+308 to 1.79E+308
+`REAL`|-3.40E+38 to 3.40E+38
+
+### Date and time
 
 **Datatype**|**Description**
 -----|-----
-`INT(n)`|Integer values
-`FLOAT(n, d)`| Decimal values
+`DATE`|Format is YYYY-MM-DD
+`TIME`|Format is HH:MI:SS
+`DATETIME`|Format is YYYY-MM-DD HH:MI:SS
+`TIMESTAMP`|Number of seconds since the UNIX epoch (‘1970-01-01 00:00:00’ UTC)
+`YEAR`|Stores year in 2 digit (70-69 represents 1970-2069) or 4 digit format (1901-2155)
+
 `VARCHAR(n)`|String with max number of characters
 `TEXT`|String with without set limit (max value of 65,535)
-`DATE('YYYY-MM-DD')`|Year, month, and day
-`DATETIME('YYYY-MM-DD HH:MI:SS')`|Year, month, day, hour, minute, and second
-`TIMESTAMP('YYYY-MM-DD HH:MI:SS')`|Datetime corresponding to UNIX epoch time
-
 
 ## CONSTRAINTS
 
