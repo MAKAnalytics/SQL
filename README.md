@@ -1,8 +1,13 @@
 # SQL
 Collection of SQL scripts for reference
 
-## DATABASES
-> ### Create a new database
+# Table of contents
+1. [DATABASES](#databases)
+  1.1 [Create a new database](#create a new database)
+
+
+## DATABASES<a name="databases"></a>
+> ### Create a new database<a name="create a new database"></a>
 
 > ```sql
 > CREATE DATABASE IF NOT EXISTS database_name
