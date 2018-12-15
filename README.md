@@ -274,7 +274,7 @@ Collection of SQL scripts for reference
 > `JSON`|Stores JSON data
 
 
-> ## CONSTRAINTS<a name="constraints"></a>
+## CONSTRAINTS<a name="constraints"></a>
 > **Constraint**|**Description**
 > -----|-----
 > `PRIMARY KEY`|Unique identifier
