@@ -175,24 +175,23 @@ Collection of SQL scripts for reference
 > ORDER BY COUNT(column_name2) DESC;
 > ```
 
-### HAVING
-This clause was added to SQL because the WHERE keyword could not be used with aggregate functions
+> ### HAVING
+> This clause was added to SQL because the WHERE keyword could not be used with aggregate functions
 > ```sql
 > SELECT COUNT(column_name1), column_name2 FROM table 
 > GROUP BY column_name2 
 > HAVING COUNT(column_name1) > 5;
 > ```
 
-### WITH
-Often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
+> ### WITH
+> Often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
 > ```sql
-> WITH RECURSIVE cte AS (<br/>
-    &nbsp;&nbsp;SELECT c0.* FROM categories AS c0 WHERE id = 1 # Starting point<br/>
-    &nbsp;&nbsp;UNION ALL<br/>
-    &nbsp;&nbsp;SELECT c1.* FROM categories AS c1 JOIN cte ON c1.parent_category_id = cte.id<br/>
-  )<br/>
->  SELECT *<br/>
->  FROM cte
+> WITH RECURSIVE cte AS (
+>   SELECT c0.* FROM categories AS c0 WHERE id = 1 # Starting point
+>   UNION ALL
+>   SELECT c1.* FROM categories AS c1 JOIN cte ON c1.parent_category_id = cte.id
+  )
+> SELECT * FROM cte
 > ```
 
 ## DATATYPES<a name="datatypes"></a>
