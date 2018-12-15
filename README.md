@@ -45,47 +45,47 @@ Collection of SQL scripts for reference
 > ### SELECT
 > Select all records from a table:
 > ```sql
-> `SELECT` * `FROM` table_name;
+> SELECT * FROM table_name;
 > ```
 > Select columns 1 and 2 from a table:
 > ```sql
-> `SELECT` column1, column2 `FROM` table_name;
+> SELECT column1, column2 FROM table_name;
 > ```
 
 > ### DISTINCT
 > Returns only unique results from a column:
 > ```sql
-> `SELECT DISTINCT` column_name;
+> SELECT DISTINCT column_name;
 > ```
 
 > ### WHERE
 > Filters rows based on one or more conditions
 > ```sql
-> `SELECT` column1, column2 `FROM` table_name `WHERE` condition;
-> `SELECT` * `FROM` table_name `WHERE` condition1 `AND` condition2;
-> `SELECT` * `FROM` table_name `WHERE` condition1 `OR` condition2;
-> `SELECT` * `FROM` table_name `WHERE NOT` condition;
-> `SELECT` * `FROM` table_name `WHERE` condition1 `AND` (condition2 `OR` condition3);
-> `SELECT` * `FROM` table_name `WHERE EXISTS` (`SELECT` column_name `FROM` table_name `WHERE` condition);
+> SELECT column1, column2 FROM table_name WHERE condition;
+> SELECT * FROM table_name WHERE condition1 AND condition2;
+> SELECT * FROM table_name WHERE condition1 OR condition2;
+> SELECT * FROM table_name WHERE NOT condition;
+> SELECT * FROM table_name WHERE condition1 AND (condition2 OR condition3);
+> SELECT * FROM table_name WHERE EXISTS (SELECT column_name FROM table_name WHERE condition);
 > ```
 
 > ### ORDER BY
 > Sorts the result-set in ascending or descending order
 > ```sql
-> `SELECT` * `FROM` table_name `ORDER BY` column;
-> `SELECT` * `FROM` table_name `ORDER BY` column `DESC`;
-> `SELECT` * `FROM` table_name `ORDER BY` column1 `ASC`, column2 `DESC`;
+> SELECT * FROM table_name ORDER BY column;
+> SELECT * FROM table_name ORDER BY column `DESC`;
+> SELECT * FROM table_name ORDER BY column1 `ASC`, column2 `DESC`;
 > ```
 
 > ### SELECT TOP
 > Specify the number of records to return from the top of table
 > ```sql
-> `SELECT TOP` number columns_names `FROM` table_name `WHERE` condition;
-> `SELECT TOP` percent columns_names `FROM` table_name `WHERE` condition;
+> SELECT TOP number columns_names FROM table_name WHERE condition;
+> SELECT TOP percent columns_names FROM table_name WHERE condition;
 > ```
-> Not all database systems support `SELECT TOP`. The MySQL equivalent is the `LIMIT` clause
+> Not all database systems support SELECT TOP. The MySQL equivalent is the LIMIT clause
 > ```sql
-> `SELECT` column_names `FROM` table_name `LIMIT` offset, count;
+> SELECT column_names FROM table_name LIMIT offset, count;
 > ```
 
 > ### LIKE
@@ -93,45 +93,45 @@ Collection of SQL scripts for reference
 > % (percent sign) is a wildcard character that represents zero, one, or multiple characters
 > _ (underscore) is a wildcard character that represents a single character
 > ```sql
-> `SELECT` column_names `FROM` table_name `WHERE` column_name `LIKE` pattern;
-> `LIKE` ‘a%’ (find any values that start with “a”)
-> `LIKE` ‘%a’ (find any values that end with “a”)
-> `LIKE` ‘%or%’ (find any values that have “or” in any position)
-> `LIKE` ‘_r%’ (find any values that have “r” in the second position)
-> `LIKE` ‘a_%_%’ (find any values that start with “a” and are at least 3 characters in length)
-> `LIKE` ‘[a-c]%’ (find any values starting with “a”, “b”, or “c”
+> SELECT column_names FROM table_name WHERE column_name LIKE pattern;
+> LIKE ‘a%’ (find any values that start with “a”)
+> LIKE ‘%a’ (find any values that end with “a”)
+> LIKE ‘%or%’ (find any values that have “or” in any position)
+> LIKE ‘_r%’ (find any values that have “r” in the second position)
+> LIKE ‘a_%_%’ (find any values that start with “a” and are at least 3 characters in length)
+> LIKE ‘[a-c]%’ (find any values starting with “a”, “b”, or “c”
 > ```
 
 > ### IN
 > Operator that allows you to specify multiple values in a WHERE clause
 > essentially the IN operator is shorthand for multiple OR conditions
 > ```sql
-> `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (value1, value2, …);
-> `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (`SELECT STATEMENT`);
+> SELECT column_names FROM table_name WHERE column_name IN (value1, value2, …);
+> SELECT column_names FROM table_name WHERE column_name IN (`SELECT STATEMENT`);
 > ```
 
 > ### BETWEEN
 > Operator selects values within a given range inclusive
 > ```sql
-> `SELECT` column_names `FROM` table_name `WHERE` column_name `BETWEEN` value1 `AND` value2;
-> `SELECT` * `FROM` Products `WHERE` (column_name `BETWEEN` value1 `AND` value2) `AND NOT` column_name2 `IN` (value3, value4);
-> `SELECT` * `FROM` Products `WHERE` column_name `BETWEEN` #01/07/1999# AND #03/12/1999#;
+> SELECT column_names FROM table_name WHERE column_name BETWEEN value1 AND value2;
+> SELECT * FROM Products WHERE (column_name BETWEEN value1 AND value2) `AND NOT` column_name2 IN (value3, value4);
+> SELECT * FROM Products WHERE column_name BETWEEN #01/07/1999# AND #03/12/1999#;
 > ```
 
 > ### NULL
 > Values in a field with no value
 > ```sql
-> `SELECT` * `FROM` table_name `WHERE` column_name `IS NULL`;
-> `SELECT` * `FROM` table_name `WHERE` column_name `IS NOT NULL`;
+> SELECT * FROM table_name WHERE column_name IS NULL;
+> SELECT * FROM table_name WHERE column_name IS NOT NULL;
 > ```
 
 > ### AS
 > Aliases that are used to assign a temporary name to a table or column
 > ```sql
-> `SELECT` column_name `AS` alias_name `FROM` table_name;
-> `SELECT` column_name `FROM` table_name `AS` alias_name;
-> `SELECT` column_name `AS` alias_name1, column_name2 `AS` alias_name2;
-> `SELECT` column_name1, column_name2 + ‘, ‘ + column_name3 `AS` alias_name;
+> SELECT column_name AS alias_name FROM table_name;
+> SELECT column_name FROM table_name AS alias_name;
+> SELECT column_name AS alias_name1, column_name2 AS alias_name2;
+> SELECT column_name1, column_name2 + ‘, ‘ + column_name3 AS alias_name;
 > ```
 
 > ### UNION
@@ -140,54 +140,59 @@ Collection of SQL scripts for reference
 > The columns must have similar data types
 > The columns in each SELECT statement must also be in the same order
 > ```sql
-> `SELECT` columns_names `FROM` table1 `UNION SELECT` column_name `FROM` table2;
-> `UNION` operator only selects distinct values, `UNION ALL` will allow duplicates
+> SELECT columns_names FROM table1 UNION SELECT column_name FROM table2;
+> UNION operator only selects distinct values, UNION ALL will allow duplicates
 > ```
 
 > ### INTERSECT
 > Set operator which is used to return the records that two SELECT statements have in common
 > ```sql
-> Generally used the same way as **UNION** above
-> `SELECT` columns_names `FROM` table1 `INTERSECT SELECT` column_name `FROM` table2;
+> Generally used the same way as UNION above
+> SELECT columns_names FROM table1 INTERSECT SELECT column_name FROM table2;
 > ```
 
 > ### EXCEPT
 > Set operator used to return all the records in the first SELECT statement that are not found in the second SELECT statement
 > Generally used the same way as **UNION** above
 > ```sql
-> `SELECT` columns_names `FROM` table1 `EXCEPT SELECT` column_name `FROM` table2;
+> SELECT columns_names FROM table1 EXCEPT SELECT column_name FROM table2;
 > ```
 
 > ### ANY|ALL 
 > Operator used to check subquery conditions used within a WHERE or HAVING clauses
-> The `ANY` operator returns true if any subquery values meet the condition
-> The `ALL` operator returns true if all subquery values meet the condition
+> The ANY operator returns true if any subquery values meet the condition
+> The ALL operator returns true if all subquery values meet the condition
 > ```sql
-> `SELECT` columns_names `FROM` table1 `WHERE` column_name operator (`ANY`|`ALL`) (`SELECT` column_name `FROM` table_name `WHERE` condition);
+> SELECT columns_names FROM table1 WHERE column_name operator (ANY|ALL) 
+>   (SELECT column_name FROM table_name WHERE condition);
 > ```
 
 > ### GROUP BY
 > Statement often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns
 > ```sql
-> `SELECT` column_name1, COUNT(column_name2) `FROM` table_name `WHERE` condition `GROUP BY` column_name1 `ORDER BY` COUNT(column_name2) DESC;
+> SELECT column_name1, COUNT(column_name2) FROM table_name 
+> WHERE condition `GROUP BY` column_name1 
+> ORDER BY COUNT(column_name2) DESC;
 > ```
 
 ### HAVING
 This clause was added to SQL because the WHERE keyword could not be used with aggregate functions
 > ```sql
-> `SELECT` `COUNT`(column_name1), column_name2 `FROM` table `GROUP BY` column_name2 `HAVING` `COUNT(`column_name1`)` > 5;
+> SELECT COUNT(column_name1), column_name2 FROM table 
+> GROUP BY column_name2 
+> HAVING COUNT(column_name1) > 5;
 > ```
 
 ### WITH
 Often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
 > ```sql
-> `WITH RECURSIVE` cte `AS` (<br/>
-    &nbsp;&nbsp;`SELECT` c0.* `FROM` categories `AS` c0 `WHERE` id = 1 `# Starting point`<br/>
-    &nbsp;&nbsp;`UNION ALL`<br/>
-    &nbsp;&nbsp;`SELECT` c1.* `FROM` categories `AS` c1 `JOIN` cte `ON` c1.parent_category_id = cte.id<br/>
+> WITH RECURSIVE cte AS (<br/>
+    &nbsp;&nbsp;SELECT c0.* FROM categories AS c0 WHERE id = 1 # Starting point<br/>
+    &nbsp;&nbsp;UNION ALL<br/>
+    &nbsp;&nbsp;SELECT c1.* FROM categories AS c1 JOIN cte ON c1.parent_category_id = cte.id<br/>
   )<br/>
->  `SELECT` *<br/>
->  `FROM` cte
+>  SELECT *<br/>
+>  FROM cte
 > ```
 
 ## DATATYPES<a name="datatypes"></a>
