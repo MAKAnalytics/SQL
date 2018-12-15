@@ -58,24 +58,35 @@ Collection of SQL scripts for reference
 > `SELECT DISTINCT` column_name;
 > ```
 
-### **WHERE**: used to filter records/rows
+> ### WHERE
+> Filters rows based on one or more conditions
+> ```sql
 > `SELECT` column1, column2 `FROM` table_name `WHERE` condition;
 > `SELECT` * `FROM` table_name `WHERE` condition1 `AND` condition2;
 > `SELECT` * `FROM` table_name `WHERE` condition1 `OR` condition2;
 > `SELECT` * `FROM` table_name `WHERE NOT` condition;
 > `SELECT` * `FROM` table_name `WHERE` condition1 `AND` (condition2 `OR` condition3);
 > `SELECT` * `FROM` table_name `WHERE EXISTS` (`SELECT` column_name `FROM` table_name `WHERE` condition);
+> ```
 
-### **ORDER BY**: used to sort the result-set in ascending or descending order
-* `SELECT` * `FROM` table_name `ORDER BY` column;
-* `SELECT` * `FROM` table_name `ORDER BY` column `DESC`;
-* `SELECT` * `FROM` table_name `ORDER BY` column1 `ASC`, column2 `DESC`;
+> ### ORDER BY
+> Sorts the result-set in ascending or descending order
+> ```sql
+> `SELECT` * `FROM` table_name `ORDER BY` column;
+> `SELECT` * `FROM` table_name `ORDER BY` column `DESC`;
+> `SELECT` * `FROM` table_name `ORDER BY` column1 `ASC`, column2 `DESC`;
+> ```
 
-### **SELECT TOP**: used to specify the number of records to return from top of table
-* `SELECT TOP` number columns_names `FROM` table_name `WHERE` condition;
-* `SELECT TOP` percent columns_names `FROM` table_name `WHERE` condition;
-* Not all database systems support `SELECT TOP`. The MySQL equivalent is the `LIMIT` clause
-* `SELECT` column_names `FROM` table_name `LIMIT` offset, count;
+> ### SELECT TOP
+> Specify the number of records to return from the top of table
+> ```sql
+> `SELECT TOP` number columns_names `FROM` table_name `WHERE` condition;
+> `SELECT TOP` percent columns_names `FROM` table_name `WHERE` condition;
+> ```
+> Not all database systems support `SELECT TOP`. The MySQL equivalent is the `LIMIT` clause
+> ```sql
+> `SELECT` column_names `FROM` table_name `LIMIT` offset, count;
+> ```
 
 ### **LIKE**: operator used in a WHERE clause to search for a specific pattern in a column
 * % (percent sign) is a wildcard character that represents zero, one, or multiple characters
