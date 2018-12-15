@@ -190,9 +190,11 @@ Collection of SQL scripts for reference
 > Often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
 > ```sql
 > WITH RECURSIVE cte AS (
->   SELECT c0.* FROM categories AS c0 WHERE id = 1 # Starting point
+>   SELECT c0.* FROM categories AS c0 
+>   WHERE id = 1 # Starting point
 >   UNION ALL
->   SELECT c1.* FROM categories AS c1 JOIN cte ON c1.parent_category_id = cte.id
+>   SELECT c1.* FROM categories AS c1 
+>   JOIN cte ON c1.parent_category_id = cte.id
 > )
 > SELECT * FROM cte
 > ```
