@@ -149,8 +149,8 @@ Collection of SQL scripts for reference
 
 > ### INTERSECT
 > Set operator which is used to return the records that two SELECT statements have in common
-> ```sql
 > Generally used the same way as UNION above
+> ```sql
 > SELECT columns_names FROM table1 INTERSECT SELECT column_name FROM table2;
 > ```
 
