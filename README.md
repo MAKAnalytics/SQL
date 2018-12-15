@@ -88,47 +88,68 @@ Collection of SQL scripts for reference
 > `SELECT` column_names `FROM` table_name `LIMIT` offset, count;
 > ```
 
-### **LIKE**: operator used in a WHERE clause to search for a specific pattern in a column
-* % (percent sign) is a wildcard character that represents zero, one, or multiple characters
-* _ (underscore) is a wildcard character that represents a single character
-* `SELECT` column_names `FROM` table_name `WHERE` column_name `LIKE` pattern;
-* `LIKE` ‘a%’ (find any values that start with “a”)
-* `LIKE` ‘%a’ (find any values that end with “a”)
-* `LIKE` ‘%or%’ (find any values that have “or” in any position)
-* `LIKE` ‘_r%’ (find any values that have “r” in the second position)
-* `LIKE` ‘a_%_%’ (find any values that start with “a” and are at least 3 characters in length)
-* `LIKE` ‘[a-c]%’ (find any values starting with “a”, “b”, or “c”
+> ### LIKE
+> Operator used in a WHERE clause to search for a specific pattern in a column
+> % (percent sign) is a wildcard character that represents zero, one, or multiple characters
+> _ (underscore) is a wildcard character that represents a single character
+> ```sql
+> `SELECT` column_names `FROM` table_name `WHERE` column_name `LIKE` pattern;
+> `LIKE` ‘a%’ (find any values that start with “a”)
+> `LIKE` ‘%a’ (find any values that end with “a”)
+> `LIKE` ‘%or%’ (find any values that have “or” in any position)
+> `LIKE` ‘_r%’ (find any values that have “r” in the second position)
+> `LIKE` ‘a_%_%’ (find any values that start with “a” and are at least 3 characters in length)
+> `LIKE` ‘[a-c]%’ (find any values starting with “a”, “b”, or “c”
+> ```
 
-### **IN**: operator that allows you to specify multiple values in a WHERE clause
-* essentially the IN operator is shorthand for multiple OR conditions
-* `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (value1, value2, …);
-* `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (`SELECT STATEMENT`);
+> ### IN
+> Operator that allows you to specify multiple values in a WHERE clause
+> essentially the IN operator is shorthand for multiple OR conditions
+> ```sql
+> `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (value1, value2, …);
+> `SELECT` column_names `FROM` table_name `WHERE` column_name `IN` (`SELECT STATEMENT`);
+> ```
 
-### **BETWEEN**: operator selects values within a given range inclusive
-* `SELECT` column_names `FROM` table_name `WHERE` column_name `BETWEEN` value1 `AND` value2;
-* `SELECT` * `FROM` Products `WHERE` (column_name `BETWEEN` value1 `AND` value2) `AND NOT` column_name2 `IN` (value3, value4);
-* `SELECT` * `FROM` Products `WHERE` column_name `BETWEEN` #01/07/1999# AND #03/12/1999#;
+> ### BETWEEN
+> Operator selects values within a given range inclusive
+> ```sql
+> `SELECT` column_names `FROM` table_name `WHERE` column_name `BETWEEN` value1 `AND` value2;
+> `SELECT` * `FROM` Products `WHERE` (column_name `BETWEEN` value1 `AND` value2) `AND NOT` column_name2 `IN` (value3, value4);
+> `SELECT` * `FROM` Products `WHERE` column_name `BETWEEN` #01/07/1999# AND #03/12/1999#;
+> ```
 
-### **NULL**: values in a field with no value
-* `SELECT` * `FROM` table_name `WHERE` column_name `IS NULL`;
-* `SELECT` * `FROM` table_name `WHERE` column_name `IS NOT NULL`;
+> ### NULL
+> Values in a field with no value
+> ```sql
+> `SELECT` * `FROM` table_name `WHERE` column_name `IS NULL`;
+> `SELECT` * `FROM` table_name `WHERE` column_name `IS NOT NULL`;
+> ```
 
-### **AS**: aliases are used to assign a temporary name to a table or column
+> ### AS
+> Aliases that are used to assign a temporary name to a table or column
+> ```sql
 * `SELECT` column_name `AS` alias_name `FROM` table_name;
 * `SELECT` column_name `FROM` table_name `AS` alias_name;
 * `SELECT` column_name `AS` alias_name1, column_name2 `AS` alias_name2;
-* `SELECT` column_name1, column_name2 + ‘, ‘ + column_name3 `AS` alias_name;
+> `SELECT` column_name1, column_name2 + ‘, ‘ + column_name3 `AS` alias_name;
+> ```
 
-### **UNION**: set operator used to combine the result-set of two or more SELECT statements
-* Each SELECT statement within UNION must have the same number of columns
-* The columns must have similar data types
-* The columns in each SELECT statement must also be in the same order
-* `SELECT` columns_names `FROM` table1 `UNION SELECT` column_name `FROM` table2;
-* `UNION` operator only selects distinct values, `UNION ALL` will allow duplicates
+> ### UNION
+> Set operator used to combine the result-set of two or more SELECT statements
+> Each SELECT statement within UNION must have the same number of columns
+> The columns must have similar data types
+> The columns in each SELECT statement must also be in the same order
+> ```sql
+> `SELECT` columns_names `FROM` table1 `UNION SELECT` column_name `FROM` table2;
+> `UNION` operator only selects distinct values, `UNION ALL` will allow duplicates
+> ```
 
-### **INTERSECT**: set operator which is used to return the records that two SELECT statements have in common
-* Generally used the same way as **UNION** above
-* `SELECT` columns_names `FROM` table1 `INTERSECT SELECT` column_name `FROM` table2;
+> ### INTERSECT
+> Set operator which is used to return the records that two SELECT statements have in common
+> ```sql
+> Generally used the same way as **UNION** above
+> `SELECT` columns_names `FROM` table1 `INTERSECT SELECT` column_name `FROM` table2;
+> ```
 
 ### **EXCEPT**: set operator used to return all the records in the first SELECT statement that are not found in the second SELECT statement
 * Generally used the same way as **UNION** above
