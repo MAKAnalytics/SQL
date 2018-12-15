@@ -73,8 +73,8 @@ Collection of SQL scripts for reference
 > Sorts the result-set in ascending or descending order
 > ```sql
 > SELECT * FROM table_name ORDER BY column;
-> SELECT * FROM table_name ORDER BY column `DESC`;
-> SELECT * FROM table_name ORDER BY column1 `ASC`, column2 `DESC`;
+> SELECT * FROM table_name ORDER BY column DESC;
+> SELECT * FROM table_name ORDER BY column1 ASC, column2 DESC;
 > ```
 
 > ### SELECT TOP
@@ -115,10 +115,12 @@ Collection of SQL scripts for reference
 > ```sql
 > SELECT column_names FROM table_name 
 > WHERE column_name BETWEEN value1 AND value2;
+
 > SELECT * FROM Products 
 > WHERE (column_name BETWEEN value1 AND value2) AND NOT column_name2 IN (value3, value4);
+
 > SELECT * FROM Products 
-> WHERE column_name BETWEEN #01/07/1999# AND #03/12/1999#;
+> WHERE column_name BETWEEN 01/07/1999 AND 03/12/1999;
 > ```
 
 > ### NULL
@@ -193,7 +195,7 @@ Collection of SQL scripts for reference
 >   SELECT c0.* FROM categories AS c0 WHERE id = 1 # Starting point
 >   UNION ALL
 >   SELECT c1.* FROM categories AS c1 JOIN cte ON c1.parent_category_id = cte.id
-  )
+> )
 > SELECT * FROM cte
 > ```
 
