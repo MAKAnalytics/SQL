@@ -128,9 +128,9 @@ Collection of SQL scripts for reference
 > ### AS
 > Aliases that are used to assign a temporary name to a table or column
 > ```sql
-* `SELECT` column_name `AS` alias_name `FROM` table_name;
-* `SELECT` column_name `FROM` table_name `AS` alias_name;
-* `SELECT` column_name `AS` alias_name1, column_name2 `AS` alias_name2;
+> `SELECT` column_name `AS` alias_name `FROM` table_name;
+> `SELECT` column_name `FROM` table_name `AS` alias_name;
+> `SELECT` column_name `AS` alias_name1, column_name2 `AS` alias_name2;
 > `SELECT` column_name1, column_name2 + ‘, ‘ + column_name3 `AS` alias_name;
 > ```
 
@@ -151,30 +151,44 @@ Collection of SQL scripts for reference
 > `SELECT` columns_names `FROM` table1 `INTERSECT SELECT` column_name `FROM` table2;
 > ```
 
-### **EXCEPT**: set operator used to return all the records in the first SELECT statement that are not found in the second SELECT statement
-* Generally used the same way as **UNION** above
-* `SELECT` columns_names `FROM` table1 `EXCEPT SELECT` column_name `FROM` table2;
+> ### EXCEPT
+> Set operator used to return all the records in the first SELECT statement that are not found in the second SELECT statement
+> Generally used the same way as **UNION** above
+> ```sql
+> `SELECT` columns_names `FROM` table1 `EXCEPT SELECT` column_name `FROM` table2;
+> ```
 
-### **ANY|ALL**: operator used to check subquery conditions used within a WHERE or HAVING clauses
-* The `ANY` operator returns true if any subquery values meet the condition
-* The `ALL` operator returns true if all subquery values meet the condition
-* `SELECT` columns_names `FROM` table1 `WHERE` column_name operator (`ANY`|`ALL`) (`SELECT` column_name `FROM` table_name `WHERE` condition);
+> ### ANY|ALL 
+> Operator used to check subquery conditions used within a WHERE or HAVING clauses
+> The `ANY` operator returns true if any subquery values meet the condition
+> The `ALL` operator returns true if all subquery values meet the condition
+> ```sql
+> `SELECT` columns_names `FROM` table1 `WHERE` column_name operator (`ANY`|`ALL`) (`SELECT` column_name `FROM` table_name `WHERE` condition);
+> ```
 
-### **GROUP BY**: statement often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns
-* `SELECT` column_name1, COUNT(column_name2) `FROM` table_name `WHERE` condition `GROUP BY` column_name1 `ORDER BY` COUNT(column_name2) DESC;
+> ### GROUP BY
+> Statement often used with aggregate functions (COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns
+> ```sql
+> `SELECT` column_name1, COUNT(column_name2) `FROM` table_name `WHERE` condition `GROUP BY` column_name1 `ORDER BY` COUNT(column_name2) DESC;
+> ```
 
-### **HAVING**: this clause was added to SQL because the WHERE keyword could not be used with aggregate functions
-* `SELECT` `COUNT`(column_name1), column_name2 `FROM` table `GROUP BY` column_name2 `HAVING` `COUNT(`column_name1`)` > 5;
+### HAVING
+This clause was added to SQL because the WHERE keyword could not be used with aggregate functions
+> ```sql
+> `SELECT` `COUNT`(column_name1), column_name2 `FROM` table `GROUP BY` column_name2 `HAVING` `COUNT(`column_name1`)` > 5;
+> ```
 
-### **WITH**: often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
-* `WITH RECURSIVE` cte `AS` (<br/>
+### WITH
+Often used for retrieving hierarchical data or re-using temp result set several times in a query. Also referred to as "Common Table Expression"
+> ```sql
+> `WITH RECURSIVE` cte `AS` (<br/>
     &nbsp;&nbsp;`SELECT` c0.* `FROM` categories `AS` c0 `WHERE` id = 1 `# Starting point`<br/>
     &nbsp;&nbsp;`UNION ALL`<br/>
     &nbsp;&nbsp;`SELECT` c1.* `FROM` categories `AS` c1 `JOIN` cte `ON` c1.parent_category_id = cte.id<br/>
   )<br/>
-  `SELECT` *<br/>
-  `FROM` cte
-
+>  `SELECT` *<br/>
+>  `FROM` cte
+> ```
 
 ## DATATYPES<a name="datatypes"></a>
 > ### Numeric
