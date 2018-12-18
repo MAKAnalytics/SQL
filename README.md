@@ -30,6 +30,10 @@ Collection of SQL scripts for reference
 26. [Insert into](#insert-into)
 27. [Update](#update)
 28. [Delete](#delete)
+29. [REPORT DATA](#report-data)
+30. [Insert into](#insert-into)
+31. [Update](#update)
+32. [Delete](#delete)
 
 25. [DATATYPES](#datatypes)
 26. [Numeric](#numeric)
@@ -245,6 +249,33 @@ Collection of SQL scripts for reference
 > ```sql
 > DELETE FROM table_name WHERE condition;
 > DELETE > FROM table_name;
+> ```
+
+
+## REPORT DATA<a name="report-data"></a>
+> ### COUNT<a name="count"></a>
+> Returns number of occurrences of the field:
+> ```sql
+> SELECT COUNT (DISTINCT column_name);
+> ```
+
+> ### MIN and MAX<a name="min-and-max"></a>
+> Returns the smallest/largest value of the selected column:
+> ```sql
+> SELECT MIN (column_names) FROM table_name WHERE condition;
+> SELECT MAX (column_names) FROM table_name WHERE condition;
+> ```
+
+> ### AVG<a name="avg"></a>
+> Returns the average value of a numeric column:
+> ```sql
+> SELECT AVG (column_name) FROM table_name WHERE condition;
+> ```
+
+> ### SUM<a name="sum"></a>
+> Returns the total sum of a numeric column:
+> ```sql
+> SELECT SUM (column_name) FROM table_name WHERE condition;
 > ```
 
 
