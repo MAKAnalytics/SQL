@@ -34,15 +34,25 @@ Collection of SQL scripts for reference
 30. [Insert into](#insert-into)
 31. [Update](#update)
 32. [Delete](#delete)
+33. [JOINS](#joins)
+34. [Inner join](#inner-join)
+35. [Left join](#left-join)
+36. [Right join](#right-join)
+37. [Full join](#full-join)
+38. [Inner join](#inner-join)
+39. [VIEWS](#views)
+40. [Create view](#create-view)
+41. [Select view(#select-view)
+42. [Drop view(#drop-view)
+43. [DATATYPES](#datatypes)
+44. [Numeric](#numeric)
+45. [Date and time](#date-and-time)
+46. [Character and string](#character-and-string)
+47. [Unicode character and string](#unicode-character-and-string)
+48. [Binary](#binary)
+49. [Miscellaneous](#miscellaneous)
+50. [CONSTRAINTS](#constraints)
 
-25. [DATATYPES](#datatypes)
-26. [Numeric](#numeric)
-27. [Date and time](#date-and-time)
-28. [Character and string](#character-and-string)
-29. [Unicode character and string](#unicode-character-and-string)
-30. [Binary](#binary)
-31. [Miscellaneous](#miscellaneous)
-32. [CONSTRAINTS](#constraints)
 
 ## DATABASES<a name="databases"></a>
 > ### Create a new database<a name="create-a-new-database"></a>
@@ -276,6 +286,39 @@ Collection of SQL scripts for reference
 > Returns the total sum of a numeric column:
 > ```sql
 > SELECT SUM (column_name) FROM table_name WHERE condition;
+> ```
+
+
+## JOINS<a name="inner-join"></a>
+### Inner join<a name="inner-join"></a>
+> Returns records that have the same value in both tables:
+> ```sql
+> SELECT column_names FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
+> SELECT table1.column_name1, table2.column_name2, table3.column_name3 FROM ((table1 INNER JOIN table2 ON relationship) INNER JOIN table3 ON relationship);
+> ```
+
+### Left (outer) join<a name="left-join"></a>
+> ```sql
+> Returns all records from the left table (table1), and the matched records from the right table (table2)
+> SELECT column_names FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
+> ```
+
+### Right (outer) join<a name="right-join"></a>
+> ```sql
+> Returns all records from the right table (table2), and the matched records from the left table (table1)
+> SELECT column_names FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
+> ```
+
+### Full (outer) join<a name="full-join"></a>
+Returns all records when there is a match in either left or right table
+> ```sql
+> SELECT column_names FROM table1 FULL OUTER JOIN table2 ON table1.column_name=table2.column_name;
+> ```
+
+### Self join<a name="self-join"></a>
+> Regular join, but the table is joined with itself
+> ```sql
+> SELECT column_names FROM table1 T1, table1 T2 WHERE condition;
 > ```
 
 
