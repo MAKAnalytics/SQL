@@ -42,8 +42,8 @@ Collection of SQL scripts for reference
 38. [Inner join](#inner-join)
 39. [VIEWS](#views)
 40. [Create view](#create-view)
-41. [Select view(#select-view)
-42. [Drop view(#drop-view)
+41. [Select view](#select-view)
+42. [Drop view](#drop-view)
 43. [DATATYPES](#datatypes)
 44. [Numeric](#numeric)
 45. [Date and time](#date-and-time)
@@ -298,14 +298,14 @@ Collection of SQL scripts for reference
 > ```
 
 ### Left (outer) join<a name="left-join"></a>
-> ```sql
 > Returns all records from the left table (table1), and the matched records from the right table (table2)
+> ```sql
 > SELECT column_names FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
 > ```
 
 ### Right (outer) join<a name="right-join"></a>
-> ```sql
 > Returns all records from the right table (table2), and the matched records from the left table (table1)
+> ```sql
 > SELECT column_names FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
 > ```
 
@@ -319,6 +319,29 @@ Returns all records when there is a match in either left or right table
 > Regular join, but the table is joined with itself
 > ```sql
 > SELECT column_names FROM table1 T1, table1 T2 WHERE condition;
+> ```
+
+
+## VIEWS<a name="views"></a>
+### Create view<a name="create-view"></a>
+> Create a view:
+> ```sql
+> SELECT column_names FROM table1 INNER JOIN table2 ON table1.column_name=table2.column_name;
+> SELECT table1.column_name1, table2.column_name2, table3.column_name3 FROM ((table1 INNER JOIN table2 ON relationship) INNER JOIN table3 ON relationship);
+> ```
+
+### Select view<a name="select-view"></a>
+> Retrieve a view:
+> ```sql
+> Returns all records from the left table (table1), and the matched records from the right table (table2)
+> SELECT column_names FROM table1 LEFT JOIN table2 ON table1.column_name=table2.column_name;
+> ```
+
+### Drop view<a name="drop-view"></a>
+> Drop a view:
+> ```sql
+> Returns all records from the right table (table2), and the matched records from the left table (table1)
+> SELECT column_names FROM table1 RIGHT JOIN table2 ON table1.column_name=table2.column_name;
 > ```
 
 
