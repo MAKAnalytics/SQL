@@ -3,7 +3,7 @@ Collection of SQL scripts for reference
 
 # TABLE OF CONTENTS
 1. [DATABASES](#databases)
-[Create a new database](#create-a-new-database)
+2. [Create a new database](#create-a-new-database)
 [Remove a database](#remove-a-database)
 [TABLES](#tables)
 [Create a new table](#create-a-new-table)
