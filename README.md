@@ -26,6 +26,11 @@ Collection of SQL scripts for reference
 22. [Group by](#group-by)
 23. [Having](#having)
 24. [With](#with)
+25. [MODIFY DATA](#modify-data)
+26. [Insert into](#insert-into)
+27. [Update](#update)
+28. [Delete](#delete)
+
 25. [DATATYPES](#datatypes)
 26. [Numeric](#numeric)
 27. [Date and time](#date-and-time)
@@ -218,6 +223,30 @@ Collection of SQL scripts for reference
 > )
 > SELECT * FROM cte
 > ```
+
+
+## MODIFY DATA<a name="modify-data"></a>
+> ### INSERT INTO<a name="insert-into"></a>
+> Insert new rows into a table:
+> ```sql
+> INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+> INSERT INTO table_name VALUES (value1, value2 …);
+> ```
+
+> ### UPDATE<a name="update"></a>
+> Modify existing records in a table:
+> ```sql
+> UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+> UPDATE table_name SET column_name = value;
+> ```
+
+> ### DELETE<a name="delete"></a>
+> Delete existing rows in a table:
+> ```sql
+> DELETE FROM table_name WHERE condition;
+> DELETE > FROM table_name;
+> ```
+
 
 ## DATATYPES<a name="datatypes"></a>
 > ### Numeric<a name="numeric"></a>
